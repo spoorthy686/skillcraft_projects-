@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TaskFlow Pro</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<i class="fa-solid fa-layer-group"></i>
+<h2>TaskFlow Pro</h2>
+</div>
+<ul class="menu">
+
+<li class="menu-item active" data-target="dashboard">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li class="menu-item" data-target="tasks">
+<i class="fa-solid fa-list-check"></i>
+Tasks
+</li>
+
+<li class="menu-item" data-target="analytics">
+<i class="fa-solid fa-chart-column"></i>
+Analytics
+</li>
+
+<li class="menu-item" data-target="calendar">
+<i class="fa-solid fa-calendar-days"></i>
+Calendar
+</li>
+
+<li class="menu-item" data-target="achievements">
+<i class="fa-solid fa-trophy"></i>
+Achievements
+</li>
+
+</ul>
+<div class="theme-box">
+<button id="themeToggle">
+🌙 Dark Mode
+</button>
+</div>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div>
+<h1>Productivity Dashboard</h1>
+<p>Manage your work smarter.</p>
+</div>
+
+<div class="header-right">
+<input
+type="text"
+id="searchTask"
+placeholder="Search task...">
+<button class="add-btn" id="scrollToForm">
+<i class="fa-solid fa-arrow-down"></i>
+</button>
+<button class="add-btn" id="openTaskForm">
+    <i class="fa-solid fa-plus"></i>
+    New Task
+</button>
+</button>
+
+</div>
+
+</header>
+
+<!-- STATS -->
+
+<section class="stats" id="dashboard">
+<div class="card">
+<h3>Total Tasks</h3>
+<h1 id="totalTasks">0</h1>
+</div>
+
+<div class="card">
+<h3>Completed</h3>
+<h1 id="completedTasks">0</h1>
+</div>
+
+<div class="card">
+<h3>Pending</h3>
+<h1 id="pendingTasks">0</h1>
+</div>
+
+<div class="card">
+<h3>Productivity</h3>
+<h1 id="productivityScore">0%</h1>
+</div>
+
+</section>
+
+<!-- TASK FORM -->
+
+<section class="task-form" id="taskForm">
+
+<h2>Create New Task</h2>
+
+<div class="form-grid">
+
+<input
+type="text"
+id="taskTitle"
+placeholder="Task Title">
+
+<textarea
+id="taskDescription"
+placeholder="Task Description">
+</textarea>
+
+<select id="taskCategory">
+
+<option value="Work">
+Work
+</option>
+
+<option value="Study">
+Study
+</option>
+
+<option value="Personal">
+Personal
+</option>
+
+<option value="Health">
+Health
+</option>
+
+</select>
+
+<select id="taskPriority">
+
+<option value="Low">
+Low Priority
+</option>
+
+<option value="Medium">
+Medium Priority
+</option>
+
+<option value="High">
+High Priority
+</option>
+
+</select>
+
+<input
+type="date"
+id="taskDate">
+
+<input
+type="time"
+id="taskTime">
+
+<button id="addTaskBtn">
+Add Task
+</button>
+
+</div>
+
+</section>
+
+<!-- FILTERS -->
+
+<section class="filters"id="filters"></section>
+
+<button class="filter-btn active">
+All
+</button>
+
+<button class="filter-btn">
+Pending
+</button>
+
+<button class="filter-btn">
+Completed
+</button>
+
+<button class="filter-btn">
+High Priority
+</button>
+
+</section>
+
+<!-- KANBAN BOARD -->
+<section class="kanban" id="kanban">
+
+<div class="column">
+<h2>📋 Todo</h2>
+<div id="todoColumn" class="task-container"></div>
+</div>
+
+<div class="column">
+<h2>⚡ In Progress</h2>
+<div id="progressColumn" class="task-container"></div>
+</div>
+
+<div class="column">
+<h2>✅ Completed</h2>
+<div id="completedColumn" class="task-container"></div>
+</div>
+
+</section>
+
+</section>
+
+<!-- PRODUCTIVITY SECTION -->
+
+<section class="bottom-grid">
+
+<!-- POMODORO -->
+
+<div class="pomodoro" id="pomodoro"></div>  
+
+<h2>🍅 Pomodoro Timer</h2>
+
+<div id="timerDisplay">
+25:00
+</div>
+
+<div class="timer-controls">
+
+<button id="startTimer">
+Start
+</button>
+
+<button id="pauseTimer">
+Pause
+</button>
+
+<button id="resetTimer">
+Reset
+</button>
+
+</div>
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+ <div class="achievements" id="achievements">
+
+<h2>🏆 Achievements</h2>
+
+<div id="achievementContainer"
+class="achievement-grid">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ANALYTICS -->
+<section class="analytics" id="analytics">
+
+<h2>
+📊 Productivity Analytics
+</h2>
+
+<div class="chart-card">
+
+<canvas id="taskChart"></canvas>
+
+</div>
+
+</section>
+
+<!-- CALENDAR -->
+<section class="calendar-section" id="calendar">
+
+<h2>
+📅 Task Calendar
+</h2>
+
+<div class="calendar-box">
+
+<div class="calendar-header">
+
+<button id="prevMonth">
+◀
+</button>
+
+<h3 id="monthYear">
+June 2026
+</h3>
+
+<button id="nextMonth">
+▶
+</button>
+
+</div>
+
+<div id="calendarGrid">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SMART INSIGHTS -->
+
+<section class="insights">
+
+<h2>
+🤖 Smart Productivity Insights
+</h2>
+
+<div class="insight-card">
+
+<p id="aiSuggestion">
+
+You have no tasks yet.
+Start by adding your first task.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<div id="toast" class="toast">
+    Task Added Successfully
+</div>
+</body>
+</html>

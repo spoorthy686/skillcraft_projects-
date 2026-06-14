@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizPro Max</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div class="screen start-screen active" id="startScreen">
+      <h1 class="logo">QuizPro</h1>
+      <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
+      
+      <div class="mode-select">
+        <button class="mode-btn active" onclick="selectMode('classic')">CLASSIC</button>
+        <button class="mode-btn" onclick="selectMode('daily')">DAILY</button>
+        <button class="mode-btn" onclick="selectMode('power')">POWER</button>
+      </div>
+
+      <input type="text" class="ai-input" id="aiTopic" placeholder="Enter topic for AI Mode: e.g. Space, Marvel" style="display:none;">
+
+      <button class="btn start-btn" onclick="startGame()">START GAME</button>
+      
+      <div class="profile" id="profile">
+        <p>Total Played: <span id="totalPlayed">0</span> | Best Streak: <span id="bestStreakGlobal">0</span></p>
+      </div>
+
+      <div class="leaderboard">
+        <h3>🏆 Top 3 Players</h3>
+        <div id="leaderboardStart"></div>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="screen game-screen" id="gameScreen">
+      <div class="header">
+        <div class="logo">LVL <span id="questionNum">1</span>/<span id="totalQ">10</span></div>
+        <div class="controls">
+          <button onclick="toggleSound()" id="soundBtn">🔊</button>
+          <button onclick="toggleMusic()" id="musicBtn">🎵</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">Score<div class="stat-value" id="score">0</div></div>
+        <div class="stat-box streak" id="streakBox">Streak<div class="stat-value" id="streak">0</div></div>
+        <div class="stat-box">Time<div class="stat-value" id="time">15</div></div>
+      </div>
+
+      <div class="timer-wrap"><div class="timer" id="timer"></div></div>
+      <div class="hint-box" id="hintBox"></div>
+
+      <div class="media-wrap" id="mediaWrap">
+        <img class="question-img" id="questionImg" alt="">
+        <iframe class="question-video" id="questionVideo" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+      </div>
+
+      <div class="question" id="question"></div>
+
+      <div class="lifelines">
+        <button class="lifeline" id="fiftyBtn" onclick="useFiftyFifty()">50:50</button>
+        <button class="lifeline" id="skipBtn" onclick="skipQuestion()">SKIP</button>
+        <button class="lifeline" id="hintBtn" onclick="useHint()">HINT</button>
+      </div>
+
+      <div class="options" id="options"></div>
+      <button class="btn next-btn" id="nextBtn" onclick="nextQuestion()">NEXT QUESTION</button>
+      <div class="explanation" id="explanation"></div>
+    </div>
+
+    <!-- End Screen -->
+    <div class="screen end-screen" id="endScreen">
+      <h1>GAME OVER</h1>
+      <p style="font-size: 24px; margin: 20px 0;">Score: <span id="finalScore"></span></p>
+      <p>Accuracy: <span id="accuracy"></span>%</p>
+      <p>Best Streak: <span id="bestStreakEnd"></span>x</p>
+      <p id="rankText" style="margin: 20px 0; color: var(--yellow); font-size: 20px;"></p>
+      <button class="btn restart-btn" onclick="location.reload()">MAIN MENU</button>
+      <button class="btn" onclick="shareScore()">SHARE SCORE</button>
+      
+      <div class="leaderboard">
+        <h3>🏆 Top 3 Players</h3>
+        <div id="leaderboardEnd"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
