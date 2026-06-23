@@ -1,0 +1,55 @@
+# Stopwatch Web Application
+
+## Overview
+
+This project is a Stopwatch Web Application developed during the SkillCraft Technology Web Development Internship. The application allows users to accurately measure time intervals and track lap timings.
+
+## Features
+
+- Start functionality
+- Pause functionality
+- Reset functionality
+- Lap time tracking
+- Responsive interface
+- User-friendly design
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Project Structure
+
+Task-02-Stopwatch-Web-App
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets
+
+## How to Run
+
+1. Download or clone the repository
+2. Open the project folder
+3. Run `index.html`
+
+## Learning Outcomes
+
+- JavaScript timing functions
+- DOM manipulation
+- Event listeners
+- UI development
+
+## Screenshots
+
+Screenshots are available in assets folder.
+
+
+## Demo Video
+
+Demo video available in assets folder.
+
+## Author
+
+Katkuri Spoorthy
