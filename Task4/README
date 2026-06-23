@@ -1,0 +1,55 @@
+# To-Do Web Application
+
+## Overview
+
+This project is a To-Do Web Application developed during the SkillCraft Technology Web Development Internship. The application helps users manage and organize daily tasks efficiently.
+
+## Features
+
+- Add tasks
+- Edit tasks
+- Delete tasks
+- Mark tasks as completed
+- Task organization
+- Date and time management
+- Responsive interface
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Project Structure
+
+Task-04-ToDo-Web-App
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets
+
+## How to Run
+
+1. Download or clone repository
+2. Open project folder
+3. Run `index.html`
+
+## Learning Outcomes
+
+- CRUD operations
+- DOM manipulation
+- JavaScript event handling
+- UI/UX design concepts
+
+## Screenshots
+
+screenshots are available in assets folder.
+
+## Demo Video
+
+Demo video available in assets folder.
+
+## Author
+
+Katkuri Spoorthy
