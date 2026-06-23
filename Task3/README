@@ -1,0 +1,54 @@
+# Quiz Game Application
+
+## Overview
+
+This project is an interactive Quiz Game Application developed during the SkillCraft Technology Web Development Internship. Users can answer multiple-choice questions and receive a score at the end.
+
+## Features
+
+- Multiple-choice questions
+- Interactive user interface
+- Score calculation
+- Dynamic question display
+- Responsive design
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Project Structure
+
+Task-03-Quiz-Game
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets
+
+## How to Run
+
+1. Download or clone repository
+2. Open project folder
+3. Run `index.html`
+
+## Learning Outcomes
+
+- JavaScript logic building
+- Dynamic content rendering
+- Event handling
+- User interaction design
+
+## Screenshots
+
+Screenshots are available in assets folder.
+
+
+## Demo Video
+
+Demo video available in assets folder.
+
+## Author
+
+Katkuri Spoorthy
